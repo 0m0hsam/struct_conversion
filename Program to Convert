@@ -1,0 +1,57 @@
+
+package main
+import(
+  "fmt"
+  "strings"
+ )
+
+type converter struct{
+  feet float64
+  centimeter float64
+  minute   float64
+  seconds float64
+  celsius float64
+  fahrenheit float64
+   radiant  float64
+   degrees float64
+   kilogram float64
+   pounds  float64
+   
+  convert_type struct{
+    cent_to_feet float64
+    feet_to_cent float64
+    min_to_sec   float64
+    sec_to_min   float64
+    cels_to_fah  float64
+    fah_to_cels  float64
+    rad_to_deg  float64
+    deg_to_rad  float64
+    kilo_to_pounds float64
+    pounds_to_kilo float64
+    
+  }
+}
+func main() {
+  var convert converter 
+  var input string
+  fmt.Print("Program to convert into Centimeter, Feet, Minute,\n Seconds, Celises, Fahrenheit, Degrees,\nRadiant, Kilogram and Pounds")
+  fmt.Print("\n\nEnter Conversion type:")
+ fmt.Scan(&input )
+var cmd = strings.ToUpper(input)
+
+ if cmd == "CENTIMETER"{
+  convert.feet = 30.48
+  //convert centimeter to feet
+  fmt.Print("Enter Centimeter value:")
+ fmt.Scan(&convert.centimeter)
+  convert.convert_type.cent_to_feet=convert.centimeter/convert.feet
+  fmt.Println("Conversion of",convert.centimeter,"centimeter is :",
+    convert.convert_type.cent_to_feet,"ft")
+   }else if cmd == "FEET"{
+//convert feet to centimeters
+   fmt.Print("Enter feet value:")
+   convert.centimeter = 30.48
+ fmt.Scan(&convert.feet)
+  convert.convert_type.feet_to_cent= convert.feet * convert.centimeter
+  fmt.Println("Conversion of",convert.feet,"feet to centimeter is :",
+    convert.convert_type.feet_to_
